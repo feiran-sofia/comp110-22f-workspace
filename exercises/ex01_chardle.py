@@ -2,18 +2,18 @@
 
 """EX01 - Chardle - A cute step toward Wordle."""
 
-__author__ = 730480069
+__author__ = "730480069"
 
 secret: str = input("Enter a 5-character word:")
 secret_length: int = len(secret)
 if secret_length != 5:
-    print("Erorr: Word must contain 5 characters")
+    print("Error: Word must contain 5 characters")
     exit()
 
 guess: str = (input("Enter a single character:"))
 guess_length: int = len(guess)
 if guess_length != 1:
-    print("Erorr: Character must be a single character.")
+    print("Error: Character must be a single character.")
     exit()
 
 character1: str = secret[0]
@@ -37,15 +37,9 @@ if guess == character5:
     print(guess + " found at index 4")
 
 if times == 1:
-    print(times,"instance of " + guess + " found in " + secret)
+    print(times, "instance of " + guess + " found in " + secret)
 else:
     if times == 0:
-       print("No instances of " + guess + " found in " + secret)
+        print("No instances of " + guess + " found in " + secret)
     else:
-       print(times,"instances of " + guess + " found in " + secret)
-
-
-
-
-
-    
+        print(times, "instances of " + guess + " found in " + secret)

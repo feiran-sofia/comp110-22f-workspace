@@ -1,0 +1,14 @@
+from random import randint
+from tkinter.tix import ExFileSelectBox
+
+question: str = input("Ask a yes/no question...")
+response: int = 0
+
+if response == 0:
+    print("Yes, definitely")
+elif response ==1:
+        print("Ask again later")
+elif response ==2:
+        print("You betcha")
+else:
+        print("My sources say no")
