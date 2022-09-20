@@ -4,7 +4,7 @@
 
 __author__ = "730480069"
 
-secret: str = "knoll"
+secret: str = "python"
 guess: str = (input(f"What is your {len(secret)}-letter guess? "))
 guess_length = len(guess)
 
@@ -24,12 +24,12 @@ if guess != secret:
         if guess[x] == secret[x]:
             emoji += GREEN_BOX
         else:
-            while same == False and position < len(secret):
+            while same is False and position < len(secret):
                 if guess[x] == secret[position]:
                     same = True
                 else:
                     position += 1
-            if same == True :
+            if same is True:
                 emoji += YELLOW_BOX
             else:
                 emoji += WHITE_BOX
@@ -37,8 +37,6 @@ if guess != secret:
             position = 0 
         x += 1 
     print(f"{emoji}\nNot quite. Play again soon!")
-    exit()
 else: 
     emoji = GREEN_BOX + GREEN_BOX + GREEN_BOX + GREEN_BOX + GREEN_BOX + GREEN_BOX
     print(f"{emoji}\nWoo! You got it!")
-    exit()
