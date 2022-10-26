@@ -39,3 +39,9 @@ print(f"Total score: {sum}")
 #last: int = len(rolls)-1
 #print(rolls[last])
 
+a: list[str] = ["one"]
+b: list[str] = a
+a.append("two")
+
+print(b[1])
+
