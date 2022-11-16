@@ -32,6 +32,33 @@ class Pizza:
         total *= tax
         return total
 
+    def __str__(self) -> str:
+        """Produce a str representation of a Point for humans."""
+        return f"({self.x}, {self.y})"
+        #It will be automatically called. Prefer this method.
+
+    def __repr__(self) -> str:
+        """Produce a str representation of a Point for Python!"""
+        return f"Point({self.x}, {self.y})"
+
+    def __mul__(self, factor: float) -> Point:
+        """Overload the multiplication operator for Point * float."""
+        return Point(self.x * factor, self.y * factor)
+
+    def __add__(self, rhs: Point) -> Point:
+        print("__add__ was called")
+        return Point(self.x + rhs.x, self.y + rhs.y)
+        #then c: Point = a + b  showed no error
+
+    def __getitem__(self, index: int) -> float:
+        """Overload the subscription notation."""
+        if index == 0:
+            return self.x
+        elif index == 1:
+            return self.y
+        else:
+            raise IndexError
+
 a_pizza: Pizza = Pizza("Large",3) #Constructor Call
 a_pizza.size = "large"
 a_pizza.toppings = 3
@@ -45,3 +72,4 @@ another_pizza: Pizza = Pizza("small",0) #Constructor Call
 another_pizza.extra_cheese = True
 print(another_pizza.size)
 print(f"Price: ${another_pizza.price(1.05)}") #Method Call
+
