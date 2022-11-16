@@ -45,7 +45,6 @@ class ViewController:
             self.pen.color(cell.color())
             self.pen.dot(constants.CELL_RADIUS)
         self.screen.update()
-
         if self.model.is_complete():
             return
         else:
